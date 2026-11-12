@@ -29,7 +29,7 @@ class Analysis:
         self.seed = seed
 
         self.models = {
-            "logreg":  make_pipeline(LogisticRegressionCV(cv=2, penalty='l1', max_iter=50000, Cs=50, solver='saga')),
+            "logreg":  make_pipeline(LogisticRegressionCV(cv=2, penalty='l1', max_iter=50000, Cs=50, solver='saga', random_state=self.seed)),
             "pc_k":   make_pipeline(PCScoreSelector(k=self.k), LogisticRegression(max_iter=10000)),
             "var_k":  make_pipeline(VarianceSelector(k=self.k), LogisticRegression(max_iter=10000)),
             "corr_k": make_pipeline(SelectKBest(score_func=f_classif, k=self.k), LogisticRegression(max_iter=10000)), 
