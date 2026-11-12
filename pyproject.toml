@@ -1,0 +1,25 @@
+[project]
+name = "drosophila-natural-odour-stats"
+version = "1.0.0"
+description = "Analysis code for Gong et al. 2027: natural odour statistics of Drosophila host fruits"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn>=1.5",
+    "matplotlib",
+    "tqdm",
+    "jupyter",
+]
+
+[tool.setuptools]
+packages = [
+    "dnos",
+    "dnos.src",
+    "dnos.analyses",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
